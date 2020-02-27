@@ -31,8 +31,8 @@ let persons = [{
     event_code: 255,
     mac_addr: 6.5,
     rssi: 25,
-    latitude : 7.89059,
-    longitude: 98.3981
+    latitude : "7.89059",
+    longitude: "98.3981"
 },
 
 {
@@ -52,8 +52,8 @@ let pm25_data = [
         location : {
 
             name: "มหาวิทยาลัยสงขลานครินทร์",
-            latitude: 7.893779,
-            longitude: 98.3507683,
+            latitude: "7.893779",
+            longitude: "98.3507683",
         },
 
         pm : 300,
@@ -108,8 +108,11 @@ router.route('/persons')
         pm25_data.push(pm25_datas);
         res.json({ message: 'pm25_data Create Finish' })
 
-        // ส่วนการเพิ่มข้อมูลใช้ post
+        // ส่วนการเพิ่มข้อมูลใช้ post PM25
     })
+
+
+
 
 router.route('/persons/:person_date')
 
@@ -119,7 +122,7 @@ router.route('/persons/:person_date')
         let index = persons.findIndex(person => (person.date === +date))
         res.json(persons[index])
 
-        
+
     })
 
     .put((req, res) => {
