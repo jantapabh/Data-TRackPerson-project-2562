@@ -111,7 +111,6 @@ router.route('/persons')
         // ส่วนการเพิ่มข้อมูลใช้ post PM25
     })
 
-
 router.route('/persons/:person_date')
 
     .get((req, res) => {
@@ -119,7 +118,6 @@ router.route('/persons/:person_date')
         let date = req.params.person_date
         let index = persons.findIndex(person => (person.date === +date))
         res.json(persons[index])
-
 
     })
 
