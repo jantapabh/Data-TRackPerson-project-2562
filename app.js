@@ -47,10 +47,9 @@ let persons = [{
 ];
 
 let pm25_data = [ 
-
     {
         location : {
-            
+
             latitude: "7.893779",
             longitude: "98.3507683",
         },
@@ -64,14 +63,12 @@ let pm25_data = [
 
 router.route('/persons')
 
-
     .get((req, res) => res.json(persons))
     //ขอค่าจาก  Person ใช้ get
 
     .post((req, res) => {
 
         let person = {}
-
 
         person.date = req.body.date;
         person.time = req.body.time;
