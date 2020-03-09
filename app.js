@@ -50,8 +50,7 @@ let pm25_data = [
 
     {
         location : {
-
-            name: "มหาวิทยาลัยสงขลานครินทร์",
+            
             latitude: "7.893779",
             longitude: "98.3507683",
         },
