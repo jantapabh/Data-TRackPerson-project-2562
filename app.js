@@ -5,8 +5,8 @@ let cors = require('cors');
 let app = express();
 app.use(cors());
 
-
 app.use('/api', bodyParser.json(), router);
+
 app.use('/api', bodyParser.urlencoded({
 
     extended: false
@@ -56,19 +56,15 @@ let pm25_data = [
         pm : 300,
         time : 5,
         date : "25-03-2563"
-        
+
     }
 ]
 
 router.route('/persons')
-
     .get((req, res) => res.json(persons))
     //ขอค่าจาก  Person ใช้ get
-
     .post((req, res) => {
-
         let person = {}
-
         person.date = req.body.date;
         person.time = req.body.time;
         person.event_code = req.body.event_code;
@@ -78,22 +74,14 @@ router.route('/persons')
         person.longitude = req.body.longitude;
         persons.push(person);
         res.json({ message: 'person Create Finish' })
-
         // ส่วนการเพิ่มข้อมูลใช้ post
     })
 
-
     router.route('/pm25_data')
-
-
     .get((req, res) => res.json(pm25_data))
     //ขอค่าจาก  bear ใช้ get
-
     .post((req, res) => {
-
         let pm25_datas = {}
-
-
         pm25_datas.location.name = req.body.location.name;
         pm25_datas.location.latitude = req.body.location.latitude;
         pm25_datas.location.longitude = req.body.location.longitude;
@@ -102,18 +90,15 @@ router.route('/persons')
         pm25_datas.date = req.body.date;
         pm25_data.push(pm25_datas);
         res.json({ message: 'pm25_data Create Finish' })
-
         // ส่วนการเพิ่มข้อมูลใช้ post PM25
     })
 
 router.route('/persons/:person_date')
 
     .get((req, res) => {
-
         let date = req.params.person_date
         let index = persons.findIndex(person => (person.date === +date))
         res.json(persons[index])
-
     })
 
     .put((req, res) => {
