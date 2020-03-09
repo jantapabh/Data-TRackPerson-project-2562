@@ -42,6 +42,7 @@ let persons = [{
 }
 ];
 
+
 let pm25_data = [ 
     {
         location : {
@@ -72,6 +73,8 @@ router.route('/persons')
         // ส่วนการเพิ่มข้อมูลใช้ post
     })
 
+
+
     router.route('/pm25_data')
     .get((req, res) => res.json(pm25_data))
     //ขอค่าจาก  bear ใช้ get
@@ -87,6 +90,8 @@ router.route('/persons')
         res.json({ message: 'pm25_data Create Finish' })
         // ส่วนการเพิ่มข้อมูลใช้ post PM25
     })
+
+    
 
 router.route('/persons/:person_date')
 
