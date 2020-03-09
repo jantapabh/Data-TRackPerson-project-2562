@@ -91,7 +91,7 @@ router.route('/persons')
         // ส่วนการเพิ่มข้อมูลใช้ post PM25
     })
 
-    
+
 
 router.route('/persons/:person_date')
 
@@ -100,6 +100,7 @@ router.route('/persons/:person_date')
         let index = persons.findIndex(person => (person.date === +date))
         res.json(persons[index])
     })
+
 
     .put((req, res) => {
         // Update a bear
@@ -116,6 +117,7 @@ router.route('/persons/:person_date')
         res.json({ message: 'Person updated!' + req.params.person_date });
     })
 
+
     .delete((req, res) => {
         // Delete a bear
         // delete  bears[req.params.bear_id]
@@ -124,6 +126,7 @@ router.route('/persons/:person_date')
         persons.splice(index, 1)
         res.json({ message: 'Personss deleted: ' + req.params.person_date });
     })
+    
 
 
 app.use("*", (req, res) => res.status(404).send('404 Not found'));
