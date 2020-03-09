@@ -54,6 +54,7 @@ let pm25_data = [
     }
 ]
 
+
 router.route('/persons')
     .get((req, res) => res.json(persons))
     //ขอค่าจาก  Person ใช้ get
