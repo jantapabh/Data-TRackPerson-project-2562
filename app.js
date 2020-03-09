@@ -49,7 +49,6 @@ let persons = [{
 let pm25_data = [ 
     {
         location : {
-
             latitude: "7.893779",
             longitude: "98.3507683",
         },
@@ -57,10 +56,9 @@ let pm25_data = [
         pm : 300,
         time : 5,
         date : "25-03-2563"
-
+        
     }
 ]
-
 
 router.route('/persons')
 
