@@ -6,13 +6,11 @@ let app = express();
 app.use(cors());
 
 app.use('/api', bodyParser.json(), router);
-
 app.use('/api', bodyParser.urlencoded({
 
     extended: false
 
 }), router)
-
 
 let persons = [{
      
@@ -23,7 +21,6 @@ let persons = [{
     rssi: 25,
     latitude : 7.89059,
     longitude: 98.3981
-
 },
 {
     data: "26-07-2563",
@@ -34,7 +31,6 @@ let persons = [{
     latitude : "7.89059",
     longitude: "98.3981"
 },
-
 {
     data: "27-07-2563",
     time: 3.30,
@@ -52,11 +48,9 @@ let pm25_data = [
             latitude: "7.893779",
             longitude: "98.3507683",
         },
-
         pm : 300,
         time : 5,
         date : "25-03-2563"
-
     }
 ]
 
